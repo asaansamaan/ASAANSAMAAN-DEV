@@ -28,7 +28,13 @@ export class ItemService {
   }
 
   addItem(item: Item) {
-    this.itemsCollection.add(item);
+    this.itemsCollection.add(item)
+    .then((value) => {
+      console.log(value);
+    }).catch((err) => {
+      window.alert('You Dont have permission to Add Item');
+      console.log(err);
+    });
   }
 
   deleteItem(item: Item) {

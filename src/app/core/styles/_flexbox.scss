@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+.flex {
+    display: flex;
+}
+.layout-row {
+    display: flex;
+    flex-direction: row;
+}
+.layout-column {
+    display: flex;
+    flex-direction: column;
+}
+.layout-wrap {
+    flex-wrap: wrap;
+}
+.layout-align-start-center {
+    justify-content: flex-start;
+    align-items: center;
+}
+.layout-align-center-center {
+    justify-content: center;
+    align-items: center;
+}
+.layout-align-start-end {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.layout-align-end-start {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.layout-align-end-center {
+    justify-content: flex-end;
+    align-items: center;
+}
+.layout-align-end-end {
+    align-items: end;
+    justify-content: flex-end;
+}
+.layout-align-space-between-center {
+    justify-content: space-between;
+    align-items: center;
+}
+.layout-align-space-around-center {
+    justify-content: space-around;
+    align-items: center;
+}

@@ -5,6 +5,7 @@ import { AddItemComponent } from '../../components/add-item/add-item.component';
 import { ItemsComponent } from '../../components/items/items.component';
 import { FormsModule } from '@angular/forms';
 import { ItemService } from '../../services/item.service';
+import { RouterModule } from '@angular/router';
 @NgModule({
     declarations: [
         HomePageComponent,
@@ -12,7 +13,8 @@ import { ItemService } from '../../services/item.service';
         AddItemComponent,
     ],
     imports: [ CommonModule,
-        FormsModule ],
+        FormsModule,
+        RouterModule, ],
     exports: [
         HomePageComponent,
     ],

@@ -8,6 +8,7 @@ import { Item } from '../../core/models/Item';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
+  loading: boolean;
   items: Item[];
   editState = false;
   itemToEdit: Item;
@@ -15,9 +16,11 @@ export class ItemsComponent implements OnInit {
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
+    this.loading = true;
     this.itemService.getItems().subscribe(items => {
       // console.log(items);
       this.items = items;
+      this.loading = false;
     });
   }
 

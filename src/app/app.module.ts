@@ -10,26 +10,30 @@ import { AppComponent } from './app.component';
 import { ItemsComponent } from './components/items/items.component';
 
 import { ItemService } from './services/item.service';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
-import { AppRoutingModule } from './app.routing.module';
 import { PageNotFoundModule } from './pages/pageNotFound/pageNotFound.module';
 import { HomePageModule } from './pages/home/home.module';
 import { CoreModule } from './core/core.module';
-import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { ASNavBarModule } from './core/components/as-nav-bar/as-nav-bar.module';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      {
+        enableTracing: false, // <-- debugging purposes only
+      }
+    ),
+    ASNavBarModule,
     AngularFireModule.initializeApp(environment.config, 'angularfs'),
     AngularFirestoreModule,
-    AppRoutingModule,
     PageNotFoundModule,
     HomePageModule,
     CoreModule,

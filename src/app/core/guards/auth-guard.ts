@@ -12,16 +12,18 @@ export class AuthGuard implements CanActivate {
     constructor(private auth: AuthService, private router: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-        if (localStorage.getItem(environment.config.apiKey)) {
-            return true;
-        }
+        // if (localStorage.getItem(environment.config.apiKey)) {
+        //     return true;
+        // }
         return this.auth.user$
         .take(1)
         .map(user => !!user)
         .do(loggedIn => {
             if (!loggedIn) {
+                window.alert('Access Denied');
                 console.log('access Denied');
-                this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+                this.router.navigate(['/home'], { queryParams: { returnUrl: state.url }});
+            } else {
             }
         });
     }
